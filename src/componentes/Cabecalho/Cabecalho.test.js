@@ -1,5 +1,8 @@
-test('Primeiro teste', () => {
-  const numero = 10;
+import { render, screen } from '@testing-library/react';
+import Cabecalho from './index';
+test('Deve renderizar o nome do usuário logado', () => {
+  render(<Cabecalho />);
 
-  expect(numero).toBe(11);
+  const nomeUsuario = screen.getByText('Joana Fonseca Dutra');
+  expect(nomeUsuario).toBeInTheDocument();
 });
